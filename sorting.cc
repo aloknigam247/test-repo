@@ -26,3 +26,29 @@ void mergeSort(int arr[], const int start, const int end) {
   mergeSort(arr, mid+1, end); // right sub-array
   mergeSortedArray(arr, start, mid, arr, mid+1, end);
 }
+
+void quickSort(int arr[], const int start, const int end) {
+  if(start < end) {
+    int pivot = partition(arr, start, end);
+    quickSort(arr, start, pivot-1);
+    quickSort(arr, pivot+1, end);
+  }
+}
+
+int partition(int arr[], const int start, const int end) {
+  int pivot = start-1,
+      i = start;
+
+  while(i<end) {
+    if(arr[i] <= arr[end]) {
+      ++pivot;
+      if(pivot != i)
+        swap(arr[pivot], arr[i]);
+    }
+    ++i;
+  }
+  ++pivot;
+  swap(arr[pivot], arr[end]);
+
+  return pivot;
+}
