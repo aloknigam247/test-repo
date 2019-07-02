@@ -52,3 +52,24 @@ int partition(int arr[], const int start, const int end) {
 
   return pivot;
 }
+
+/* Assumption: all values in the array arr are greater than 0 */
+void countingSort(int arr[], const int size) {
+  int max_size = arrayMax(arr, size);
+  int *aux_arr = new int[max_size];
+  
+  for(int i=0; i<size; ++i)
+    aux_arr[arr[i]] = aux_arr[arr[i]] + 1;
+
+  int j=0;
+  for(int i=0; i<max_size; ++i) {
+    if(aux_arr[i]) {
+      while(aux_arr[i]) {
+        arr[j] = i;
+        j++;
+        aux_arr[i] = aux_arr[i] - 1;
+      }
+    }
+  }
+  delete[] aux_arr;
+}

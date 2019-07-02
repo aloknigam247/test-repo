@@ -38,3 +38,11 @@ void mergeSortedArray(int arr1[], const int start1, const int end1,
     }
   }
 }
+
+int arrayMax(const int arr[], const int size) {
+  int max = 0;
+  for(int i=0; i<size; ++i)
+    if(max < arr[i])
+      max = arr[i];
+  return max;
+}
