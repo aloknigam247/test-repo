@@ -16,12 +16,10 @@ void selectionSort(int arr[], const int size) {
       swap(arr[i], arr[min_pos]);
   }
 }
-
 void mergeSort(int arr[], const int start, const int end) {
-
   if(start == end)  // if single element is passed
     return;
-  int mid = (end-start)/2;
+  int mid = start + (end-start)/2;
   mergeSort(arr, start, mid); // left sub-array
   mergeSort(arr, mid+1, end); // right sub-array
   mergeSortedArray(arr, start, mid, arr, mid+1, end);

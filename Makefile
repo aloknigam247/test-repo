@@ -1,2 +1,2 @@
 out: *.cc *.h
-	g++ -o out *.cc
+	g++ -g -o out *.cc
