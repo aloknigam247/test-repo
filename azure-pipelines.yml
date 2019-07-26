@@ -11,9 +11,5 @@ pool:
 
 steps:
 - script: |
-    make
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'which valgrind'
+    valgrind
   displayName: 'make'
