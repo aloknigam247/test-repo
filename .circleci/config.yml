@@ -13,7 +13,7 @@ jobs:
         command: make
 
 
-workflow:
+workflows:
   version: 2
   Regression:
     jobs:
