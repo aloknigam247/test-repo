@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Build Source Code
-          command: make
+          #command: make
 workflows:
   version: 2
   Regression:
