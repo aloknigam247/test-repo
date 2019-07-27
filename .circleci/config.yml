@@ -17,4 +17,4 @@ workflows:
   version: 2
   Regression:
     jobs:
-      source-code-build:
+      - source-code-build:
