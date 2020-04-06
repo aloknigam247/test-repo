@@ -16,6 +16,8 @@ jobs:
     - name: Pushing
       run: |
         echo "new file" > newfile
+        git config --global user.name 'Alok'
+        git config --global user.email 'aloknigam247@github.com'
         git add .
         git commit -m "add new file"
         git push
