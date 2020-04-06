@@ -1,0 +1,15 @@
+name: test CI
+
+on:
+  pull_request:
+    types: closed 
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: configure
+      run: echo "Running on PR close actions."
