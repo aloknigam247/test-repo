@@ -1,8 +1,7 @@
 name: test CI
 
 on:
-  pull_request:
-    types: closed 
+  push:
 
 jobs:
   test:
@@ -11,13 +10,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-      run: echo "Running on PR close actions."
-    - name: Pushing
+    - name: Create PR
       run: |
-        echo "new file" > newfile
-        git config --global user.name 'Alok'
-        git config --global user.email 'aloknigam247@github.com'
-        git add .
-        git commit -m "add new file"
-        git push
+        sudo apt install git && sudo dpkg -i gh_*_linux_amd64.deb
+        echo "create PR"
+        gh pr create -B master -b "test PR" -f -t "Test PR"
